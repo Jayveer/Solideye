@@ -80,7 +80,7 @@ bool CLI::checkInput() {
 void CLI::run(std::string programName, std::string version) {
 	printf("Running %s v%s: Visit https://github.com/Jayveer/Solideye for updates:\n", programName.c_str(), version.c_str());
 	loadDictionary("dictionary.txt");
-	if (!checkInput) return;
+	if (!checkInput()) return;
 	processArgs();
 }
 

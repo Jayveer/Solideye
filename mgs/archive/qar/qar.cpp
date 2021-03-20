@@ -50,7 +50,9 @@ void Qar::extractAll(std::string output) {
 		writeDataToFile(txn, size, header.filenames[i], output);
 
 		delete[] txn;
-		qarDat.seekg(size);
+
+		int align = getAlignment(qarDat.tellg(), 0x80);
+		qarDat.seekg(align, qarDat.cur);
 	}
 
 	qarDat.close();
