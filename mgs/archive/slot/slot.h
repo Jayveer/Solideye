@@ -55,6 +55,7 @@ public:
 	std::string getCreatedDate();
 
 	void open();
+	void pack(std::string output = "");
 	void extractAll(std::string output = "");
 	void extract(uint16_t pageID, std::string output = "");
 

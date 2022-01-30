@@ -1,8 +1,8 @@
 #include "stage.h"
 
-Stage::Stage(std::string filename) : Slot(filename) {}
+Stage::Stage(std::string filename) : Slot(filename) { setType(ARCHIVE_STAGE); }
 
-Stage::Stage(std::string filename, uint32_t sector) : Slot(filename, sector) {}
+Stage::Stage(std::string filename, uint32_t sector) : Slot(filename, sector) { setType(ARCHIVE_STAGE); }
 
 Stage::~Stage() {}
 

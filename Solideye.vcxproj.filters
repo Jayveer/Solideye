@@ -45,6 +45,15 @@
     <ClCompile Include="mgs\archive\dar\dar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mgs\crypto\crypto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mgs\3rdparty\blowfish\Blowfish.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mgs\3rdparty\md5\md5.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="interface\cli\cli.h">
@@ -93,6 +102,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mgs\archive\archive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mgs\crypto\crypto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mgs\3rdparty\blowfish\Blowfish.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mgs\3rdparty\md5\md5.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

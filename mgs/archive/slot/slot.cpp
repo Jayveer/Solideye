@@ -2,11 +2,13 @@
 
 Slot::Slot(std::string filename) {
 	this->filename = filename;
+	setType(ARCHIVE_SLOT);
 }
 
 Slot::Slot(std::string filename, uint32_t sector) {
 	this->filename = filename;
 	this->sector = sector;
+	setType(ARCHIVE_SLOT);
 }
 
 Slot::~Slot() {}
@@ -41,6 +43,11 @@ void Slot::open() {
 	slotDat.read((char*)&this->header, sizeof(SlotHeader));
 	initPageInfo(slotDat);
 	slotDat.close();
+}
+
+void Slot::pack(std::string output) {
+	//not yet supported
+	printf("Sorry, packing this file type is not yet supported");
 }
 
 void Slot::initPageInfo(std::ifstream& slotDat) {
