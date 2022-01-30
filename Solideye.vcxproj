@@ -154,6 +154,8 @@
     <ClCompile Include="dictionary\dictionary.cpp" />
     <ClCompile Include="interface\cli\cli.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mgs\3rdparty\blowfish\Blowfish.cpp" />
+    <ClCompile Include="mgs\3rdparty\md5\md5.cpp" />
     <ClCompile Include="mgs\3rdparty\zlib\wrapper\ZlibWrapper.cpp" />
     <ClCompile Include="mgs\archive\dar\dar.cpp" />
     <ClCompile Include="mgs\archive\qar\qar.cpp" />
@@ -161,10 +163,13 @@
     <ClCompile Include="mgs\archive\slot\stage\stage.cpp" />
     <ClCompile Include="mgs\common\decryptor\decryptor.cpp" />
     <ClCompile Include="mgs\config\cnf.cpp" />
+    <ClCompile Include="mgs\crypto\crypto.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dictionary\dictionary.h" />
     <ClInclude Include="interface\cli\cli.h" />
+    <ClInclude Include="mgs\3rdparty\blowfish\Blowfish.h" />
+    <ClInclude Include="mgs\3rdparty\md5\md5.h" />
     <ClInclude Include="mgs\3rdparty\zlib\wrapper\ZlibWrapper.h" />
     <ClInclude Include="mgs\3rdparty\zlib\zconf.h" />
     <ClInclude Include="mgs\3rdparty\zlib\zlib.h" />
@@ -179,6 +184,7 @@
     <ClInclude Include="mgs\common\strcode.h" />
     <ClInclude Include="mgs\common\util.h" />
     <ClInclude Include="mgs\config\cnf.h" />
+    <ClInclude Include="mgs\crypto\crypto.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="mgs\3rdparty\zlib\zlib.lib" />

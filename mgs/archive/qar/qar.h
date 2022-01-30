@@ -1,5 +1,6 @@
 #pragma once
 #include "../archive.h"
+#include "../../common/strcode.h"
 
 struct QarDataInfo {
 	uint32_t fileInfo;
@@ -8,7 +9,7 @@ struct QarDataInfo {
 
 struct QarHeader {
 	int16_t numFiles;
-	uint16_t pad;
+	uint16_t pad = 0;
 	std::vector<QarDataInfo> dataInfo;
 	std::vector<std::string> filenames;
 	int32_t offset;
@@ -20,8 +21,12 @@ public:
 	~Qar();
 
 	void open();
-	void extractAll(std::string output);
+	void pack(std::string output = "");
+	void extractAll(std::string output = "");
 private:
 	QarHeader header;
 	std::string filename = "cache.qar";
+
+	void addFiles(std::string& output);
+	void addFile(const std::filesystem::directory_entry& file, std::string& output);
 };

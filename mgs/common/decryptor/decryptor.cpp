@@ -35,6 +35,14 @@ uint32_t Decryptor::decodeCNF(uint32_t keyA, uint32_t keyB, int offset, int size
     return decodeBuffer(cnfKeyA, cnfKeyB, offset, size, src);
 }
 
+uint64_t Decryptor::encodeFile(uint64_t keyA[8], int offset, int size, uint8_t* src) {
+    return decodeBuffer64(keyA, keyA[0], offset, size + 0x10, src, 1);
+}
+
+uint64_t Decryptor::decodeFile(uint64_t keyA[8], int offset, int size, uint8_t* src) {
+    return decodeBuffer64(keyA, keyA[0], offset, size - 0x10, src);
+}
+
 uint32_t Decryptor::decodeBuffer(uint32_t keyA, uint32_t keyB, unsigned int offset, unsigned int size, uint8_t* src) {
     uint32_t* srcP = (uint32_t*)src;
     size /= 4;
@@ -45,4 +53,17 @@ uint32_t Decryptor::decodeBuffer(uint32_t keyA, uint32_t keyB, unsigned int offs
         keyA = interval + keyB;
     }
     return keyA;
+}
+
+uint64_t Decryptor::decodeBuffer64(uint64_t keyA[8], uint64_t keyB, unsigned int offset, unsigned int size, uint8_t* src, bool enc) {
+    uint64_t* srcP = (uint64_t*)src;
+    size /= 8;
+
+    for (int i = offset; i < size; i++) {
+        uint64_t interval = srcP[i];
+        srcP[i] ^= keyB ^ keyA[(i % 7) + 1];
+        keyB = enc ? srcP[i] : interval;
+    }
+
+    return keyB;
 }
