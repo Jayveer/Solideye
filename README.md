@@ -65,7 +65,7 @@ Solideye.exe -dec cache.dar -k stage/database
 the [-dec] or [--decrypt] option will allow you to decrypt an encrypted file in a stage folder.  the [-k] or [--key] is mandatory in this instance as the key is required to do the decryption. The key will be the path to the file starting from the stage folder.
 
 ```
-Solideye.exe -dec cache.dar -k stage/database
+Solideye.exe -enc cache.dar -k stage/database
 ```
 Finally the [-enc] or [--encrypt] option will allow you to encrypt a file with a key of your choice. once again the [-k] or [--key] is mandatory.
 
